@@ -1,7 +1,8 @@
-package hu.bf.storageservice.entity;
+package hu.bf.storageservice.storage.file.entity;
+
+import hu.bf.storageservice.storage.metadata.entity.StoredFileMetadata;
 
 import java.io.InputStream;
-import java.io.OutputStream;
 
 public class StoredFile {
     private InputStream data;

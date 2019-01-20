@@ -1,4 +1,6 @@
-package hu.bf.storageservice.entity;
+package hu.bf.storageservice.storage.file.entity;
+
+import hu.bf.storageservice.storage.metadata.entity.FileMetaData;
 
 import java.io.InputStream;
 

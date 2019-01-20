@@ -1,8 +1,10 @@
-package hu.bf.storageservice.entity;
+package hu.bf.storageservice.storage.metadata.entity;
 
+import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
+@MappedSuperclass
 public class FileMetaData {
 
     @NotNull

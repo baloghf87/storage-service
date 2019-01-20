@@ -1,9 +1,6 @@
-package hu.bf.storageservice.entity;
+package hu.bf.storageservice.storage.metadata.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
@@ -13,23 +10,30 @@ public class StoredFileMetadata extends FileMetaData {
     @Id
     @SequenceGenerator(name = "file_id_generator", sequenceName = "file_id_seq")
     @GeneratedValue(generator = "file_id_generator")
-    private long id;
+    private Long id;
 
+    @Column(unique = true)
     private String key;
 
     public StoredFileMetadata() {
     }
 
-    public StoredFileMetadata(FileMetaData fileMetaData, String key) {
+    public StoredFileMetadata(FileMetaData fileMetaData, String key, Long id) {
         super(fileMetaData.getName(), fileMetaData.getType());
+        this.key = key;
+        this.id = id;
+    }
+
+    public StoredFileMetadata(@NotNull String name, @NotNull String type, @NotNull String key) {
+        super(name, type);
         this.key = key;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -53,7 +57,6 @@ public class StoredFileMetadata extends FileMetaData {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(super.hashCode(), id, key);
     }
 }
