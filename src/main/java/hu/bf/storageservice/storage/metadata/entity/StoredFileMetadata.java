@@ -29,6 +29,12 @@ public class StoredFileMetadata extends FileMetaData {
         this.key = key;
     }
 
+    public StoredFileMetadata(@NotNull String name, @NotNull String type, @NotNull String key, @NotNull Long id) {
+        super(name, type);
+        this.key = key;
+        this.id = id;
+    }
+
     public Long getId() {
         return id;
     }

@@ -23,7 +23,7 @@ public abstract class FileStorageServiceIntegrationTest {
     private FileStorageService storageService;
 
     @Test
-    public void shouldStoreAndGet() throws IOException, MetaDataKeyIsNotUniqueException, DataKeyIsNotUniqueException {
+    public void shouldStoreAndGet() throws IOException, MetaDataKeyIsNotUniqueException, DataKeyIsNotUniqueException, InvalidFileException {
         //given
         byte[] data1 = Util.getRandomBytes(1024 * 1024 * 10);
         String fileName1 = "test-file.bin";
@@ -71,5 +71,4 @@ public abstract class FileStorageServiceIntegrationTest {
         byte[] actualData2 = IOUtils.toByteArray(storedFile2.getData());
         assertArrayEquals(data2, actualData2);
     }
-
 }

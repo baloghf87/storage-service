@@ -68,6 +68,9 @@ public abstract class MetaDataStorageServiceIntegrationTest {
         StoredFileMetadata storedFileMetadata2 = new StoredFileMetadata("name2", "type2", key2);
         metaDataStorageService.store(storedFileMetadata2);
 
+        assertEquals(storedFileMetadata1, metaDataStorageService.get(storedFileMetadata1.getKey()));
+        assertEquals(storedFileMetadata2, metaDataStorageService.get(storedFileMetadata2.getKey()));
+
         //when
         storedFileMetadata1.setKey("key-1");
         storedFileMetadata1.setName("name-1");

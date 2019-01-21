@@ -3,6 +3,7 @@ package hu.bf.storageservice.storage.file.entity;
 import hu.bf.storageservice.storage.metadata.entity.StoredFileMetadata;
 
 import java.io.InputStream;
+import java.util.Objects;
 
 public class StoredFile {
     private InputStream data;
@@ -30,5 +31,20 @@ public class StoredFile {
 
     public void setMetaData(StoredFileMetadata metaData) {
         this.metaData = metaData;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StoredFile that = (StoredFile) o;
+        return Objects.equals(data, that.data) &&
+                Objects.equals(metaData, that.metaData);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(data, metaData);
     }
 }

@@ -5,6 +5,7 @@ import hu.bf.storageservice.storage.data.service.DataStorageService;
 import hu.bf.storageservice.storage.file.entity.IncomingFile;
 import hu.bf.storageservice.storage.file.entity.StoredFile;
 import hu.bf.storageservice.storage.key.service.KeyCreatorService;
+import hu.bf.storageservice.storage.metadata.entity.FileMetaData;
 import hu.bf.storageservice.storage.metadata.entity.StoredFileMetadata;
 import hu.bf.storageservice.storage.metadata.exception.MetaDataIsNotPresentException;
 import hu.bf.storageservice.storage.metadata.exception.MetaDataKeyIsNotUniqueException;
@@ -26,10 +27,35 @@ public class FileStorageServiceImpl implements FileStorageService {
     private KeyCreatorService keyCreatorService;
 
     @Override
-    public String store(IncomingFile incomingFile) throws MetaDataKeyIsNotUniqueException, DataKeyIsNotUniqueException, IOException {
+    public String store(IncomingFile incomingFile) throws MetaDataKeyIsNotUniqueException, DataKeyIsNotUniqueException, IOException, InvalidFileException {
+        verify(incomingFile);
         String key = storeMetadata(incomingFile);
         dataStorageService.store(key, incomingFile.getData());
         return key;
+    }
+
+    private void verify(IncomingFile incomingFile) throws InvalidFileException {
+        verifyData(incomingFile);
+        verifyMetadata(incomingFile);
+    }
+
+    private void verifyMetadata(IncomingFile incomingFile) throws InvalidFileException {
+        FileMetaData metaData = incomingFile.getMetaData();
+        if (metaData == null) {
+            throw new InvalidFileException("Metadata not found");
+        }
+        if (metaData.getName() == null) {
+            throw new InvalidFileException("Filename not found");
+        }
+        if (metaData.getType() == null) {
+            throw new InvalidFileException("Filetype not found");
+        }
+    }
+
+    private void verifyData(IncomingFile incomingFile) throws InvalidFileException {
+        if (incomingFile.getData() == null) {
+            throw new InvalidFileException("Data not found");
+        }
     }
 
     private String storeMetadata(IncomingFile incomingFile) throws MetaDataKeyIsNotUniqueException {

@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public interface FileStorageService {
 
-    String store(IncomingFile incomingFile) throws MetaDataKeyIsNotUniqueException, DataKeyIsNotUniqueException, IOException;
+    String store(IncomingFile incomingFile) throws MetaDataKeyIsNotUniqueException, DataKeyIsNotUniqueException, IOException, InvalidFileException;
 
     StoredFile get(String key) throws IOException;
 
