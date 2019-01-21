@@ -3,13 +3,10 @@ package hu.bf.storageservice.storage.metadata.service;
 import hu.bf.storageservice.storage.metadata.entity.StoredFileMetadata;
 import hu.bf.storageservice.storage.metadata.exception.MetaDataIsNotPresentException;
 import hu.bf.storageservice.storage.metadata.exception.MetaDataKeyIsNotUniqueException;
-import hu.bf.storageservice.storage.metadata.service.MetaDataStorageService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public abstract class MetaDataStorageServiceIntegrationTest {
 

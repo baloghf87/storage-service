@@ -4,7 +4,6 @@ import hu.bf.storageservice.Util;
 import hu.bf.storageservice.storage.data.exception.DataKeyIsNotUniqueException;
 import hu.bf.storageservice.storage.file.entity.IncomingFile;
 import hu.bf.storageservice.storage.file.entity.StoredFile;
-import hu.bf.storageservice.storage.file.service.FileStorageService;
 import hu.bf.storageservice.storage.metadata.entity.FileMetaData;
 import hu.bf.storageservice.storage.metadata.entity.StoredFileMetadata;
 import hu.bf.storageservice.storage.metadata.exception.MetaDataKeyIsNotUniqueException;

@@ -1,8 +1,6 @@
 package hu.bf.storageservice.storage.data.service;
 
 import hu.bf.storageservice.Util;
-import hu.bf.storageservice.storage.data.service.DataStorageServiceIntegrationTest;
-import hu.bf.storageservice.storage.data.service.FilesystemDataStorageServiceImpl;
 import hu.bf.storageservice.storage.metadata.entity.StoredFileMetadata;
 import org.junit.After;
 import org.junit.Before;

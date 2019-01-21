@@ -2,8 +2,6 @@ package hu.bf.storageservice.storage.file.service;
 
 import hu.bf.storageservice.Util;
 import hu.bf.storageservice.storage.data.service.FilesystemDataStorageServiceImpl;
-import hu.bf.storageservice.storage.file.service.FileStorageServiceImpl;
-import hu.bf.storageservice.storage.file.service.FileStorageServiceIntegrationTest;
 import hu.bf.storageservice.storage.key.service.KeyCreatorServiceHashidsImpl;
 import hu.bf.storageservice.storage.metadata.entity.StoredFileMetadata;
 import hu.bf.storageservice.storage.metadata.repository.StoredFileMetadataRepository;

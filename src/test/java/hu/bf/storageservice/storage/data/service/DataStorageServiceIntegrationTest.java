@@ -2,7 +2,6 @@ package hu.bf.storageservice.storage.data.service;
 
 import hu.bf.storageservice.Util;
 import hu.bf.storageservice.storage.data.exception.DataKeyIsNotUniqueException;
-import hu.bf.storageservice.storage.data.service.DataStorageService;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,5 @@
 package hu.bf.storageservice.storage.key.service;
 
-import hu.bf.storageservice.storage.key.service.KeyCreatorService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
