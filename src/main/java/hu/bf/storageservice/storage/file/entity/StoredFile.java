@@ -44,7 +44,14 @@ public class StoredFile {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(data, metaData);
+    }
+
+    @Override
+    public String toString() {
+        return "StoredFile{" +
+                "data=" + data +
+                ", metaData=" + metaData +
+                '}';
     }
 }

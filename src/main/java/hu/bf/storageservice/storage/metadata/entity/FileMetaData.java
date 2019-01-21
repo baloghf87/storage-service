@@ -48,7 +48,14 @@ public class FileMetaData {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(name, type);
+    }
+
+    @Override
+    public String toString() {
+        return "FileMetaData{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

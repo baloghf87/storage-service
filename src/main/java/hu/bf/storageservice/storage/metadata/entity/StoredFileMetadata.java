@@ -65,4 +65,14 @@ public class StoredFileMetadata extends FileMetaData {
     public int hashCode() {
         return Objects.hash(super.hashCode(), id, key);
     }
+
+    @Override
+    public String toString() {
+        return "StoredFileMetadata{" +
+                "id=" + id +
+                ", key='" + key + '\'' +
+                ", name='" + getName() + '\'' +
+                ", type='" + getType() + '\'' +
+                '}';
+    }
 }
